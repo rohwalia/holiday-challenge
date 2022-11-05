@@ -4,7 +4,6 @@ from dask import dataframe as dd
 import pandas as pd
 import numpy as np
 import airportsdata
-import time
 
 airport_IATA = ["LEJ", "STR", "HAM", "DUS", "DRS", "FRA", "CGN", "MUC", "FMO", "SCN", "DTM", "NUE", "FKB",
                 "HAJ", "KSF", "BER", "BSL", "FMM", "FDH", "BRE", "NRN", "ZRH", "PAD", "ERF", "LBC", "PRG",
@@ -66,7 +65,6 @@ def offers_filter():
            & (offers["countadults"] == st.session_state.adults) \
            & (offers["countchildren"] == st.session_state.children) \
            & ((offers["returndate"]-offers["departuredate"]).dt.days == st.session_state.duration)
-    #st.write(offers.loc[mask].head(100))
     offers_filtered = offers.loc[mask].compute()
     results = offers_filtered.drop(["outbounddepartureairport", "countadults", "countchildren"], axis=1).sort_values("price", ascending=True).head(1000)
     st.session_state.meals = results["mealtype"].unique()
@@ -74,7 +72,6 @@ def offers_filter():
     st.session_state.number = len(results)
     results = results.groupby("hotelid", sort=False)
     st.session_state.results = results
-    #st.write(1000, "results found in", time.time()-start, "seconds")
 
 with st.sidebar.form(key="input"):
     st.session_state.airport = st.selectbox("Departure airport", options=airport_name)

@@ -31,7 +31,7 @@ if "hotels" not in st.session_state:
     st.session_state["hotels"] = hotels
 hotels = st.session_state.hotels
 
-if "offers" not in st.session_state or True:
+if "offers" not in st.session_state:
     offers = dd.read_parquet("parquet", engine="pyarrow",
                              columns=["hotelid", "departuredate", "returndate", "countadults", "countchildren",
                                       "price", "outbounddepartureairport", "mealtype", "oceanview", "roomtype"])

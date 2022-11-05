@@ -58,7 +58,6 @@ def change_forward():
 def offers_filter():
     global offers
     change_forward()
-    #start = time.time()
     mask = (offers["outbounddepartureairport"] == airport_IATA[airport_name.index(st.session_state.airport)]) \
            & (offers["departuredate"] > st.session_state.departure_date) \
            & (offers["returndate"] < st.session_state.return_date) \

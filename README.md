@@ -12,7 +12,7 @@ In the sidebar some general parameters (e.g. duration of holiday) can be set for
 
 #### Details on implementation
 
-The main file of this web application is the comparison.py file. Instead of reading the offers.csv file, the file was divided into multiple smaller parquet files, where parquet is a columnar file format designed for efficient data storage and retrieval. The division was done with the preprocessing.py file and the parquet files can be found in the directory parquet in the repository. To handle and filter data at this scale and not overwhelm the system storage the library dask was used. Still on my system an average query takes around 1 minute to finish.
+The main file of this web application is the comparison.py file. Instead of reading the offers.csv file, the file was divided into multiple smaller parquet files, where parquet is a columnar file format designed for efficient data storage and retrieval. The division was done with the preprocessing.py file and the parquet files can be found in the directory parquet in the repository. To handle and filter data at this scale and not overwhelm the system storage the library dask was used. Still, on my system an average query takes around 1 minute to finish.
 
 ---
 

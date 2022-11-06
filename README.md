@@ -18,6 +18,6 @@ The main file of this web application is the comparison.py file. Instead of read
 
 #### How to run web application
 
-The required libraries can be found in the requirements.txt file and can be easily installed using pip. Then using the command line in terminal, navigate to the directory in which comparison.py is located and run with the command "streamlit run comparison.py". Then the web application is exectued locally, popping up as a browser tab. Alternatively, the web application can also be accessed publicly: https://rohwalia-holiday-challenge-comparison-7ninck.streamlit.app/
+The required libraries can be found in the requirements.txt file and can be easily installed using pip. Then using the terminal, navigate to the directory in which comparison.py is located and run with the command "streamlit run comparison.py". Then the web application is exectued locally, popping up as a browser tab. Alternatively, the web application can also be accessed publicly: https://rohwalia-holiday-challenge-comparison-7ninck.streamlit.app/
 
 Since the latter is hosted on streamlit cloud, only limited resources are available for computation. Hence, the time needed to display results might be even longer.

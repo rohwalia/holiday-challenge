@@ -1,0 +1,12 @@
+airportsdata
+bing-image-urls
+crispy-bootstrap4
+dask
+DateTime
+Django
+django-crispy-forms
+django-el-pagination
+numpy
+pandas
+pip
+pymongo

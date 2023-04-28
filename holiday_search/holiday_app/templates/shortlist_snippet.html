@@ -1,0 +1,37 @@
+<div class="offer">
+<div style="background-image: url({{value.8}});" class="offer_image">
+</div>
+<div style="width: 70%; float:right; padding: 10px 10px 10px 10px">
+   <h4>{{value.5}}</h4>
+   {% for i in '12345'|make_list %}
+      {% if forloop.counter <= value.6 %}
+         <span class="fa fa-star checked"></span>
+      {% else %}
+         <span class="fa fa-star"></span>
+      {% endif %}
+   {% endfor %}
+<hr style="border: 1px solid #491f6f;">
+   <div style="width: 50%; float:left;">
+      <h5>Price: {{value.0}} €</h5>
+   <h5>Departure date: {{value.1}}</h5>
+      <h5>Return date: {{value.2}}</h5>
+</div>
+
+      <div style="width: 50%; float:left">
+      <h5>Room type: {{value.4}}</h5>
+   <h5>Meal type: {{value.3}}</h5>
+      {% if value.7 == 0 %}
+         <h5>Ocean view: No</h5>
+      {% else %}
+         <h5>Ocean view: Yes</h5>
+      {% endif %}
+</div>
+   <form method="post">
+      {% csrf_token %}
+   <div style="padding: 120px 0px 0px 200px;">
+<button class="button-37" role="button" name="remove" value="{{value}}">Remove</button>
+</div>
+   </form>
+</div>
+</div>
+<br />

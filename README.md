@@ -1,2 +1,3 @@
 # holiday-challenge
 
+## Data preparation

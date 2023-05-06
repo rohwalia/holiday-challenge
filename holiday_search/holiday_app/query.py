@@ -56,6 +56,7 @@ def get_offers(data_dict):
         {"$group": {"_id": "$hotelid", "best": {"$first": "$$ROOT"}}},
         {"$sort": {"best.price": 1}},
         {"$limit": 50},
+        {"$lookup": {"from": "hotels", "localField": "best.hotelid", "foreignField": "hotelid", "as": "more_info"}},
     ])
     results = []
     for each in selection_1:
@@ -64,10 +65,14 @@ def get_offers(data_dict):
         result_return = (pd.Timestamp(global_start_date)+pd.Timedelta(days=offer[2])).strftime('%Y-%m-%d')
         result_meal = mealtype_dict[str(offer[4])].title()
         result_room = roomtype_dict[str(offer[5])].title()
-        more_info = list(hotels.aggregate([
+        more_info_dict = each["more_info"][0]
+        more_info_dict.pop('_id')
+        more_info_dict.pop('hotelid')
+        more_info = np.fromiter(more_info_dict.values(), dtype=object)
+        """more_info = list(hotels.aggregate([
             {"$match": {"hotelid": int(offer[3])}},
             {"$project": {"_id": 0, "hotelname": 1, "hotelstars": 1}},
-        ]).next().values())
+        ]).next().values())"""
         results.append([offer[0], result_departure, result_return, more_info[0], int(more_info[1]), result_meal, result_room, offer[6], int(offer[3]),
                         urls[int(offer[3])-1]])
     if len(results) == 0:

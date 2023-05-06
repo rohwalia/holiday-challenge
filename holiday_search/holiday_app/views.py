@@ -6,6 +6,7 @@ import ast
 from .form_basic import BasicForm, DetailForm
 from .query import get_offers, get_details
 from itertools import chain
+import time
 
 short_list = []
 back = "shortlist"
@@ -16,6 +17,7 @@ def get_params(request):
     global results
     global results_detail
     global info
+    start = time.time()
     if request.method=="POST" and "find" in request.POST:
         form = BasicForm(request.POST)
         if form.is_valid():
@@ -35,6 +37,7 @@ def get_params(request):
     page_template = 'endless.html'
     if request.headers.get('x-requested-with') == 'XMLHttpRequest': #if request.is_ajax():
         template = 'endless.html'
+    print(time.time() - start)
     return render(request, template, {'form': form, 'results': results, 'page_template': page_template})
 
 def second_view(request):
@@ -44,6 +47,7 @@ def second_view(request):
     global data_dict_detail
     global info
     global short_list
+    start = time.time()
     form = BasicForm(data_dict)
     data_dict = data_dict
     if request.method == "POST" and len(list(request.POST.keys())) == 2 and "short" in request.POST:
@@ -71,6 +75,7 @@ def second_view(request):
     page_template = 'endless_detail.html'
     if request.headers.get('x-requested-with') == 'XMLHttpRequest': #if request.is_ajax():
         template = 'endless_detail.html'
+    print(time.time() - start)
     return render(request, template, {'form': form, 'detail_form': detail_form, 'results': results_detail, 'info': info, 'page_template': page_template})
 
 

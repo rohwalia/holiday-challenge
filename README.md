@@ -34,14 +34,17 @@ Since there are only ~1k different hotels, there is no need to tranform this dat
 To make the application more realistic and immersive, for each hotel a corresponding image is found. For this the library bing_image_urls is used, which gives us the url of the first image when a hotelname is looked up on the bing search engine. If there are no results or if something other than an image url is returned, a predefined default image url is used instead. The resulting list of image urls (in the order of hotelid) is written to the file *urls.txt*.
 
 #### Testing some queries with sample_query.py
-There are two types of queries needed for the application. Both use the MongoDB aggregate operation, which allows us to specify a pipeline to filter, group and sort the dataset. To decrease the query times, a covered index was created for both the offers and the hotels collection. This means, when running a query, only the index in cache is used and no document is pulled from the collection in the database. For query type 1, the query time is ~75ms. For query type 2, the query time is ~50ms.
+There are two types of queries needed for the application. Both use the MongoDB aggregate operation, which allows us to specify a pipeline to filter, group and sort the dataset. To decrease the query times, a covered index was created for both the offers and the hotels collection. This means, when running a query, only the index in cache is used and no document is pulled from the collection in the database. For query type 1, the query time is ~80ms. For query type 2, the query time is ~60ms.
 
 ---
 
 ### Django application
 
-For the user to interact with MongDB database, a Django application was created and can be found in the directory *holiday_search*. In *holiday_search\holiday_search* the relevant files are *settings.py* and *urls.py*. The former is used to specify general settings, such as the location of the HTML templates. The latter maps the url extensions to the function to be called to render the application. In *holiday_search\holiday_app*. The relevant files are *form_basic.py*, *query.py* and *views.py*.
+For the user to interact with MongDB database, a Django application was created and can be found in the directory *holiday_search*. In *holiday_search\holiday_search* the relevant files are *settings.py* and *urls.py*. The former is used to specify general settings, such as the location of the HTML templates. The latter maps the url extensions to the function to be called to render the application. In *holiday_search\holiday_app*. The relevant files are *form_basic.py*, *query.py* and *views.py*. In *form_basic.py* two Django forms *BasicForm* and *DetailForm* are declared. In *query.py* there are two functions *get_offers* and *get_details* (for the two types of queries) which return the query output as lists. In *views.py* there are the functions called when one of the urls in *urls.py* is accessed. These are responsible for calling the query functions and then rendering the HTML templates.
 
+---
+
+### Features
 
 ---
 

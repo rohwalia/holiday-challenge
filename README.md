@@ -56,3 +56,6 @@ This application has following features:
 ---
 
 ## Demonstration
+
+Unfortunately, transferring the MongoDB database to a docker container was more difficult than expected. So, for now, here is a link to a Youtube-Video, where I demonstrate the Django application with all the features: 
+

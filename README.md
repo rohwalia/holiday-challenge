@@ -38,7 +38,7 @@ There are two types of queries needed for the application. Both use the MongoDB 
 
 ---
 
-### Django application
+## Django application
 
 For the user to interact with MongDB database, a Django application was created and can be found in the directory *holiday_search*. In *holiday_search\holiday_search* the relevant files are *settings.py* and *urls.py*. The former is used to specify general settings, such as the location of the HTML templates. The latter maps the url extensions to the function to be called to render the application. In *holiday_search\holiday_app* the relevant files are *form_basic.py*, *query.py* and *views.py*. In *form_basic.py* two Django forms *BasicForm* and *DetailForm* are declared which are used to set filters for the dataset. In *query.py* there are two functions *get_offers* and *get_details* (for the two types of queries) which return the query output as lists. In *views.py* there are the functions called when one of the urls in *urls.py* is accessed. These are responsible for calling the query functions and then rendering the HTML templates.
 
@@ -46,6 +46,12 @@ For the user to interact with MongDB database, a Django application was created 
 
 ## Features
 
+This application has following features:
+- pretty fast query times (<100ms) and loading times (<1s)
+- users are able to shortlist items
+- users are able to filter offers according to additional properties (mealtype, roomtype and oceanview)
+- image for each hotel offer (improves look of application significantly)
+- infinite scroll pagination: new offers are only then loaded when user scrolls to end of page (this limits loading times)
 
 ---
 

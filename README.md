@@ -22,6 +22,10 @@ A few of these are categorical data (e.g. mealtype). So reduce storage size and 
 
 In offers_database.py
 
+---
+
 ### Django app
+
+---
 
 ### Demonstration

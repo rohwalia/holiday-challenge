@@ -1,5 +1,7 @@
 # holiday-challenge
 
+---
+
 ## Data preparation
 
 After a first look at the offers dataset, the columns necessary for our application are:

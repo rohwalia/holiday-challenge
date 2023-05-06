@@ -61,5 +61,5 @@ This application has following features:
 
 Unfortunately, transferring the MongoDB database to a docker container was more difficult than expected. So, for now, here is a link to a Youtube-Video, where I demonstrate the Django application with all the features: 
 
-If you want to test Python scripts in *data_prep* the files *offers.csv* and *hotels.csv* both have to be in that directory. The required Python libraries can be found in *holiday_search\requirements.txt*.
+If you want to test the Python scripts in *data_prep* the files *offers.csv* and *hotels.csv* both have to be in that directory. The required Python libraries can be found in *holiday_search\requirements.txt*.
 

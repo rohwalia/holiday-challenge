@@ -42,7 +42,7 @@ Adding an covered index to the offers collection, which includes all columns. So
 
 ### Django application
 
-For the user to interact with MongDB database, a Django application was created and can be found in the
+For the user to interact with MongDB database, a Django application was created and can be found in the directory *holiday_search*. In *holiday_search\holiday_search* the relevant files are *settings.py* and *urls.py*. The former is used to specify general settings, such as the location of the HTML templates or .The latter maps the url extensions to the function to be called to render the application. The actual code corresponding to our application is in *holiday_search\holiday_app*. The relevant files are *form_basic.py*, *query.py* and *views.py*.
 
 
 ---

@@ -57,7 +57,7 @@ This application has following features:
 
 To improve:
 - better GUI (current version is a bit basic, more interactive elements with for example React)
-- deploy app using hosting platform for the Django project (e.g. Heroku) and a cloud database (e.g. MongoDB Atlas)
+- deploy application using hosting platform for the Django project (e.g. Heroku) and a cloud database (e.g. MongoDB Atlas)
 
 ---
 

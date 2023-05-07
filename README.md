@@ -55,6 +55,10 @@ This application has following features:
 - image for each hotel offer (improves look of application significantly)
 - infinite scroll pagination: new offers are only then loaded when user scrolls to end of page (this limits loading times)
 
+To improve:
+- better GUI (current version is a bit basic, more interactive elements with for example React)
+- deploy app using hosting platform for the Django project (e.g. Heroku) and a cloud database (e.g. MongoDB Atlas)
+
 ---
 
 ## Demonstration
